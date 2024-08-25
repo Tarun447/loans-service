@@ -3,23 +3,21 @@ server:
   port: 8002
 
 spring:
-  jpa.hibernate:
-    ddl-auto: update
   application:
     name: loan-service
   datasource:
-    url: jdbc:mysql://localhost:3306/udemy
-    driver-class-name:com:
-      mysql:
-        cj:
-          jdbc:
-            Driver: driver-class-name:com.mysql.cj.jdbc.Driver
-    username: root
-    password: root
-  sql:
-    init:
-      mode: always
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
   jpa:
-    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+
+
 
 
