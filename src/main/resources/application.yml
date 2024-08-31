@@ -1,22 +1,14 @@
-
 server:
   port: 8002
-
 spring:
   application:
-    name: loan-service
-  datasource:
-    url: jdbc:h2:mem:testdb
-    driverClassName: org.h2.Driver
-    username: sa
-    password: ''
-  h2:
-    console:
-      enabled: true
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    hibernate:
-      ddl-auto: update
+    name: loans
+  config:
+    import: optional:configserver:http://localhost:7001
+  profiles:
+    active:
+      dev
+
 
 
 
